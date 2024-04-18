@@ -7,3 +7,7 @@ func Reverse(s string) string {
 	}
 	return string(r)
 }
+
+func SymbolCount(s string) int {
+	return len([]rune(s))
+}

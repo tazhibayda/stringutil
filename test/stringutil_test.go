@@ -21,3 +21,21 @@ func TestReverse(t *testing.T) {
 		}
 	}
 }
+
+func TestSymbolCount(t *testing.T) {
+	tests := []struct {
+		input    string
+		expected int
+	}{
+		{"hello", 5},
+		{"", 0},
+		{"12345", 5},
+		{"こんにちは", 5},
+	}
+
+	for _, test := range tests {
+		if output := stringutil.SymbolCount(test.input); output != test.expected {
+			t.Errorf("SymbolCount(%q) = %d, want %d", test.input, output, test.expected)
+		}
+	}
+}
